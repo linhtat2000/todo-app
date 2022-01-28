@@ -1,7 +1,7 @@
 :root {
   /* PRIMARY COLORS */
   --primary-clr: hsl(220, 98%, 61%);
-  --check-bg-clr: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+  --check-bg-clr: linear-gradient(to right, #57ddff, #c058f3);
 
   /* LIGHT THEME */
   --lt-grey-10-clr: hsl(0, 0%, 98%);
@@ -61,12 +61,6 @@
 }
 
 .check-icon.input-check {
-  background-color: red;
-  border-radius: 50%;
-  display: block;
-  width: 25px;
-  height: 25px;
-  object-fit: contain;
   position: absolute;
   top: 16px;
   left: 20px;
@@ -108,12 +102,12 @@
 }
 
 .check-icon {
-  background-color: red;
+  background: var(--check-bg-clr);
   border-radius: 50%;
   display: block;
   width: 25px;
   height: 25px;
-  object-fit: contain;
+  object-fit: none;
   cursor: pointer;
 }
 
