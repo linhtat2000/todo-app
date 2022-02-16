@@ -3,11 +3,10 @@ import React, { useState } from "react";
 import moon from "./images/icon-moon.svg";
 import sun from "./images/icon-sun.svg";
 import check from "./images/icon-check.svg";
-import TodoItem from "./components/todo-item/TodoItem";
 import data from "./data.json";
+import TodoList from "./components/TodoList";
 
 import "./app.css";
-import TodoList from "./components/TodoList";
 
 const App = () => {
   let todoList = [];
@@ -15,7 +14,7 @@ const App = () => {
 
   const handleEnter = (e) => {
     if (e.key === "Enter") {
-      addTodo(e.target.value);
+      addTodo(e.currentTarget.value);
     }
   };
 
@@ -26,7 +25,16 @@ const App = () => {
   };
 
   const handleChange = (e) => {
-    setTodo(e.target.value);
+    setTodo(e.currentTarget.value);
+  };
+
+  const handleCheck = (id) => {
+    let mapped = todo.map((task) => {
+      return task.id === Number(id)
+        ? { ...task, complete: !task.complete }
+        : { ...task };
+    });
+    setTodo(mapped);
   };
 
   return (
@@ -60,7 +68,7 @@ const App = () => {
         </div>
         <div className="wrapper">
           <div className="todo-list">
-            <TodoList todoList={todo} />
+            <TodoList todoList={todo} handleCheck={handleCheck} />
           </div>
           <div className="info">
             <div className="items-left">5 items left</div>
