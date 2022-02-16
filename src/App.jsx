@@ -1,12 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 
 import moon from "./images/icon-moon.svg";
 import sun from "./images/icon-sun.svg";
-import cross from "./images/icon-cross.svg";
 import check from "./images/icon-check.svg";
+import TodoItem from "./components/todo-item/TodoItem";
+import data from "./data.json";
+
 import "./app.css";
+import TodoList from "./components/TodoList";
 
 const App = () => {
+  let todoList = [];
+  const [todo, setTodo] = useState(data);
+
+  const handleEnter = (e) => {
+    if (e.key === "Enter") {
+      addTodo(e.target.value);
+    }
+  };
+
+  const addTodo = (item) => {
+    todoList.push(item);
+    console.log("entered", todoList);
+    setTodo("");
+  };
+
+  const handleChange = (e) => {
+    setTodo(e.target.value);
+  };
+
   return (
     <div className="app">
       <div className="hero">
@@ -20,42 +42,25 @@ const App = () => {
 
       <main className="container">
         <div className="input-field">
+          {/* <button type="submit"> */}
           <img
             src={check}
             alt="check icon to add todo"
-            className="check-icon input-check"
+            className="check-icon input-icon"
           />
+          {/* </button> */}
           <input
             type="text"
+            name="text"
             className="input"
             placeholder="Create a new todo ..."
+            onChange={handleChange}
+            onKeyPress={handleEnter}
           />
         </div>
         <div className="wrapper">
           <div className="todo-list">
-            {/* You don't have any items here! Create some by inputing from the
-            field above ;) */}
-            <div className="todo-item">
-              <img
-                src={check}
-                alt="check icon to add todo"
-                className="check-icon"
-              />
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-                a culpa necessitatibus! Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Iure porro inventore perferendis.
-              </p>
-
-              {/* only display when hovering */}
-              <img
-                src={cross}
-                alt="Delete the item icon"
-                className="delete-icon"
-              />
-            </div>
-            <div className="todo-item">Clean the room</div>
-            <div className="todo-item">Reading 2 chapter</div>
+            <TodoList todoList={todo} />
           </div>
           <div className="info">
             <div className="items-left">5 items left</div>
