@@ -119,6 +119,6 @@
   color: var(--lt-grey-blue-50-clr);
 }
 
-.active {
+.filtered {
   color: hsl(228, 45%, 44%);
 }

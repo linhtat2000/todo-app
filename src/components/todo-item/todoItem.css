@@ -34,6 +34,7 @@
 
 .todo {
   margin-left: 0.8em;
+  text-transform: capitalize;
 }
 
 .todo.completed {

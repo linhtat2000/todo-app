@@ -13,8 +13,10 @@ const TodoForm = ({ addTask }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addTask(input);
-    setInput("");
+    if (input !== "") {
+      addTask(input);
+      setInput("");
+    }
   };
 
   return (

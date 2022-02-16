@@ -5,9 +5,8 @@ import check from "../../images/icon-check.svg";
 import "./todoItem.css";
 
 const TodoItem = ({ todo, index, handleCheck, handleDelete }) => {
-  const handleClick = (e) => {
-    e.preventDefault();
-    handleCheck(e.currentTarget.nextElementSibling.id);
+  const handleClick = () => {
+    handleCheck(todo.id);
   };
 
   const deleteTask = (index) => {
