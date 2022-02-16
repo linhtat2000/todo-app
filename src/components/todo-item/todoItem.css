@@ -4,6 +4,8 @@
   display: flex;
   align-items: center;
   list-style: none;
+  cursor: pointer;
+  position: relative;
 }
 
 .border-gradient-wrapper {
@@ -14,7 +16,7 @@
 }
 
 .border-gradient-wrapper:hover {
-  background: linear-gradient(to right, #57ddff, #c058f3);
+  background: var(--check-bg-clr);
 }
 
 .border-gradient-wrapper .check-icon {
@@ -25,10 +27,28 @@
   background-color: #fff;
 }
 
+.check-icon.completed {
+  background: var(--check-bg-clr);
+  border: none;
+}
+
 .todo {
   margin-left: 0.8em;
 }
 
 .todo.completed {
   text-decoration: line-through;
+}
+
+.delete-icon {
+  position: absolute;
+  right: 1.5em;
+  cursor: pointer;
+  object-fit: contain;
+  margin-left: 2em;
+  display: none;
+}
+
+.todo-item:hover .delete-icon {
+  display: block;
 }
