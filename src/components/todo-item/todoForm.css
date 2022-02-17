@@ -18,3 +18,10 @@
   font-size: 1.2rem;
   color: var(--lt-grey-blue-50-clr);
 }
+
+@media (max-width: 600px) {
+  .input {
+    font-size: 0.9rem;
+    padding: 1.4em 4.1em;
+  }
+}

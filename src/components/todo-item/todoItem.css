@@ -53,3 +53,15 @@
 .todo-item:hover .delete-icon {
   display: block;
 }
+
+@media (max-width: 600px) {
+  .todo-item {
+    padding: 0.9em;
+    padding-left: 1.3em;
+    font-size: 0.9rem;
+  }
+
+  .delete-icon {
+    width: 15px;
+  }
+}

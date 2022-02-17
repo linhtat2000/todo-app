@@ -31,7 +31,7 @@ const TodoForm = ({ addTask }) => {
         <input
           type="text"
           value={input}
-          placeholder="What do you want to accomplished today?"
+          placeholder="Create a new todo..."
           onChange={handleChange}
           className="input"
         />
