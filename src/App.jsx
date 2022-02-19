@@ -132,7 +132,7 @@ const App = () => {
         </a>
         . Coded by{" "}
         <a
-          href="htpps://www.xiaoling2000.com"
+          href="htpps://www.linhtat2000.netlify.app"
           target="_blank"
           rel="noreferrer"
           class="attribution"
