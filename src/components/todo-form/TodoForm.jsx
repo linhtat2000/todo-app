@@ -1,26 +1,18 @@
-import { useState } from "react";
-
 import check from "../../images/icon-check.svg";
 
 import "./todoForm.css";
 
-const TodoForm = ({ addTask }) => {
-  const [input, setInput] = useState("");
-
-  const handleChange = (e) => {
-    setInput(e.currentTarget.value);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (input !== "") {
-      addTask(input);
-      setInput("");
-    }
-  };
+const TodoForm = ({ handleChange, handleSubmit, input }) => {
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   if (input !== "") {
+  //     addTask(input);
+  //     setInput("");
+  //   }
+  // };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form>
       <div className="input-field">
         <img
           src={check}
